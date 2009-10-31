@@ -122,6 +122,7 @@ Raphael.fn.g.barchart = function (x, y, width, height, values, opts) {
     }
     chart.label = function (labels, isBottom) {
         labels = labels || [];
+        isBottom = isBottom == undefined ? true : isBottom;
         this.labels = paper.set();
         var L, l = -Infinity;
         if (opts.stacked) {

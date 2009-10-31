@@ -130,8 +130,8 @@ Raphael.fn.g.barchart = function (x, y, width, height, values, opts) {
                 var tot = 0;
                 for (var j = 0; j < (multi || 1); j++) {
                     tot += multi ? values[j][i] : values[i];
-                    if (j == multi - 1) {
-                        var label = paper.g.labelise(labels[i], tot, total);
+                    if (j == 0) {
+                        var label = paper.g.labelise(labels[j][i], tot, total);
                         L = paper.g.text(bars[j][i].x, isBottom ? y + height - barvgutter / 2 : bars[j][i].y - 10, label);
                         var bb = L.getBBox();
                         if (bb.x - 7 < l) {

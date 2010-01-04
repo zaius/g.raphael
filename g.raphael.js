@@ -43,7 +43,7 @@
         return this.text(x, y, text).attr(this.g.txtattr);
     };
     Raphael.fn.g.labelise = function (label, val, total) {
-        if (label) {
+        if (label||label==0) {
             return (label + "").replace(/(##+(?:\.#+)?)|(%%+(?:\.%+)?)/g, function (all, value, percent) {
                 if (value) {
                     return (+val).toFixed(value.replace(/^#+\.?/g, "").length);

@@ -109,7 +109,7 @@ Raphael.fn.g.linechart = function (x, y, width, height, valuesx, valuesy, opts) 
         for (var i = 0, ii = valuesx.length; i < ii; i++) {
             Xs = Xs.concat(valuesx[i]);
         }
-        Xs.sort();
+        Xs.sort(function(a, b){ return a - b; }); // http://github.com/DmitryBaranovskiy/g.raphael/issues#issue/9
         // remove duplicates
         var Xs2 = [],
             xs = [];

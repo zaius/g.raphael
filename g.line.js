@@ -70,6 +70,12 @@ Raphael.fn.g.linechart = function (x, y, width, height, valuesx, valuesy, opts) 
     var axis = this.set();
 
     if (opts.axis) {
+        if (opts.x_spacing) {
+            opts.axisxstep = (maxx - minx) / opts.x_spacing;
+        }
+        if (opts.y_spacing) {
+            opts.axisystep = (maxy - miny) / opts.y_spacing;
+        }
         var ax = (opts.axis + "").split(/[,\s]+/);
 
         +ax[0] && axis.push(this.g.axis(x + gutter, y + gutter, width - 2 * gutter, minx, maxx, opts.axisxstep || Math.floor((width - 2 * gutter) / 20), 2, opts.labels && opts.labels[0]));

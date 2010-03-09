@@ -34,7 +34,7 @@ Raphael.fn.g.linechart = function (x, y, width, height, valuesx, valuesy, opts) 
     var allx = Array.prototype.concat.apply([], valuesx),
         ally = Array.prototype.concat.apply([], valuesy),
         xdim = this.g.snapEnds(Math.min.apply(Math, allx), Math.max.apply(Math, allx), valuesx[0].length - 1),
-        minx = opts.miny !== undefined ? opts.minx : xdim.from,
+        minx = opts.minx !== undefined ? opts.minx : xdim.from,
         maxx = opts.maxx !== undefined ? opts.maxx : xdim.to,
         gutter = opts.gutter !== undefined ? opts.gutter : 10,
         kx = (width - gutter * 2) / (maxx - minx),

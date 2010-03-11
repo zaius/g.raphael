@@ -51,6 +51,12 @@ Raphael.fn.g.linechart = function (x, y, width, height, valuesx, valuesy, opts) 
         chart = this.set(),
         path = [];
 
+    if (miny == maxy) {
+        miny--;
+        maxy++;
+        ky = (height - gutter * 2) / (maxy - miny);
+    }
+
     for (var i = 0, ii = valuesy.length; i < ii; i++) {
         len = Math.max(len, valuesy[i].length);
     }

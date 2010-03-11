@@ -365,6 +365,9 @@
                 R = Math.floor(d * Math.pow(10, i)) / Math.pow(10, i);
             }
             i ++;
+            if (Math.ceil(d) != Math.floor(d)) {
+              i++;
+            }
         } else {
             while (!r) {
                 i = i || 1;
